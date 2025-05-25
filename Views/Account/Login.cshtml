@@ -1,0 +1,155 @@
+﻿@* @model MVC_Core.ViewModels.LoginUserViewModel *@
+
+@* @{ *@
+@*     ViewData["Title"] = "Login"; *@
+@* } *@
+
+@* <h1>Login</h1> *@
+
+@* <hr /> *@
+@* <div class="row"> *@
+@*     <div class="col-md-4"> *@
+@*         <form asp-action="SaveLogin"> *@
+@*             <div asp-validation-summary="All" class="text-danger"></div> *@
+@*             <div class="form-group"> *@
+@*                 <label asp-for="UserName" class="control-label"></label> *@
+@*                 <input asp-for="UserName" class="form-control" /> *@
+@*                 <span asp-validation-for="UserName" class="text-danger"></span> *@
+@*             </div> *@
+@*             <div class="form-group"> *@
+@*                 <label asp-for="Password" class="control-label"></label> *@
+@*                 <input asp-for="Password" class="form-control" /> *@
+@*                 <span asp-validation-for="Password" class="text-danger"></span> *@
+@*             </div> *@
+@*             <div class="form-group form-check"> *@
+@*                 <label class="form-check-label"> *@
+@*                     <input class="form-check-input" asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe) *@
+@*                 </label> *@
+@*             </div> *@
+@*             <div class="form-group"> *@
+@*                 <input type="submit" value="Create" class="btn btn-primary" /> *@
+@*             </div> *@
+@*         </form> *@
+@*     </div> *@
+@* </div> *@
+
+@* <div> *@
+@*     <a asp-action="Register">Register</a> *@
+@* </div> *@
+
+@* @section Scripts { *@
+@*     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} *@
+@* } *@
+
+
+@model MVC_Core.ViewModels.LoginUserViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<style>
+    .login-container {
+        max-width: 400px;
+        margin: 3rem auto;
+        padding: 2rem;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        background: #ffffff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .login-header {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #0073b1; /* LinkedIn blue */
+        text-align: center;
+    }
+    .form-group label {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+    .form-control {
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        padding: 0.5rem 0.75rem;
+        font-size: 1rem;
+        width: 100%;
+    }
+    .form-check-label {
+        font-weight: 500;
+        user-select: none;
+    }
+    .btn-primary {
+        background-color: #0073b1;
+        border: none;
+        padding: 0.75rem;
+        width: 100%;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .btn-primary:hover {
+        background-color: #005582;
+    }
+    .validation-summary-errors {
+        color: #d93025;
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+    .text-danger {
+        font-size: 0.875rem;
+    }
+    .register-link {
+        text-align: center;
+        margin-top: 1.25rem;
+        font-weight: 500;
+    }
+    .register-link a {
+        color: #0073b1;
+        text-decoration: none;
+    }
+    .register-link a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="login-container">
+    <h1 class="login-header">Sign In</h1>
+
+    <form asp-action="SaveLogin" novalidate>
+        <div asp-validation-summary="All" class="validation-summary-errors"></div>
+
+        <div class="form-group">
+            <label asp-for="UserName"></label>
+            <input asp-for="UserName" class="form-control" placeholder="Enter your username" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password"></label>
+            <input asp-for="Password" class="form-control" type="password" placeholder="Enter your password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-group form-check">
+            <input class="form-check-input" asp-for="RememberMe" id="rememberMe" />
+            <label class="form-check-label" for="rememberMe">@Html.DisplayNameFor(m => m.RememberMe)</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+
+    <div class="register-link">
+        <span>Don't have an account? <a asp-action="Register">Register here</a></span>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

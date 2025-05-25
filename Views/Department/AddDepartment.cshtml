@@ -1,0 +1,18 @@
+﻿@{
+	ViewData["Title"] = "AddDepartment";
+}
+
+<h1>AddDepartment</h1>
+
+<form method="post" action="/department/save">
+	<div>
+		<label>Department Name</label>
+		<input id="Name" name="Name" class="form form-control" />
+	</div>
+	<div>
+		<label>Manager Name</label>
+		<input id="ManagerName" name="ManagerName" class="form form-control" />
+	</div>
+	<input type="submit" value="Create" class="btn btn-primary" />
+</form>
+<a href="/department/details" class="btn btn-primary">Back To List</a>
