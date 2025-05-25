@@ -1,4 +1,3 @@
-
 # OrgManager-MVC
 
 An ASP.NET Core MVC web application for managing employees and departments, implementing clean architecture principles, SOLID design, and full authentication with ASP.NET Identity.
@@ -24,14 +23,16 @@ An ASP.NET Core MVC web application for managing employees and departments, impl
 ## 🧭 Getting Started
 
 1. Clone the repo:
+
    ```bash
-   git clone https://github.com/your-username/OrgManager-MVC.git
+   git clone https://github.com/MahmoudMahfouz-1/OrgManager-MVC.git
    cd OrgManager-MVC
    ```
 
 2. Update the `appsettings.json` with your SQL Server connection string.
 
 3. Run migrations:
+
    ```bash
    Update-Database
    ```
@@ -41,10 +42,6 @@ An ASP.NET Core MVC web application for managing employees and departments, impl
    dotnet run
    ```
 
-## 📸 Screenshots
-
-_Add screenshots of the login page, employee/dept management views, etc._
-
 ## 🙋‍♂️ Author
 
-Built with passion by [Your Name]
+Built with passion by **Mahmoud Essam**
